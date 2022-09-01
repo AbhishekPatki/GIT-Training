@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FirstDom</title>
+</head>
+<body>
+    <h1>DOM Manipulation with JS</h1>
+    <div id="div1">
+
+    </div>
+    <button onclick="changeContent()">Change Content</button>
+    <button onclick="updateDiv1()">Update Div1 Content</button>
+    <button onclick="updateDiv2()">Update Div2 Content</button>
+    <button onclick="toggleDiv2()">Toggle Div2 Content</button>
+    <script>
+        function changeContent(){
+        //   alert('Hello World');
+        var divs = document.getElementsByTagName("div");
+        for(var element of divs) {
+            element.innerHTML = 'Content added via JS code';
+        }  
+
+        }
+        function updateDiv1(){
+            var div = document.getElementById("div1");
+            div.innerHTML = "<p>Div content changed using JS<p/>";
+        }
+        function updateDiv2(){
+            var div = document.getElementById("div2");
+            div.style.backgroundColor='red';
+            div.style.padding='10px';
+            div.style.border='1px solid blue';
+            div.innerHTML = "<p>Div2 content changed and styled<p/>";
+        }
+        function toggleDiv2(){
+            var div = document.getElementById("div2");
+            if(div.style.display=='block'){
+                div.style.display='none';
+            }
+            else
+                div.style.display='block';
+        }
+    </script>
+    <div id="div2">
+
+    </div>
+    <form onsubmit="return submitForm()">
+    <label >Enter Name</label>
+    <input type="text" name="uName" id="uName">
+    <br>
+    <input type="submit" value="Send">
+</form>
+<p style="border: 1px solid black;padding:5px">
+    Result: <span id="result"></span>
+</p>
+<script>
+    function submitForm(){
+        var name = document.getElementById("uName").value;
+        var result = document.getElementById("result");
+        result.innerHTML = name;
+        return false;
+    }
+</script>
+</body>
+</html>
