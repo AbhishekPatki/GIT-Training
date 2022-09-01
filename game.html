@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    let x = Math.floor((Math.random() * 10) + 1);
+
+    
+   
+    //console.log("Actual answer "+x)
+    var attempts = 0
+    attempts = parseInt(attempts)
+    while(attempts<3)
+    {
+        var number = parseInt(prompt("Enter the Number"))
+        console.log("User Input "+number)
+        if(x == number)
+        {
+            console.log("You win...!")
+            break;
+        }
+        else
+        {
+            attempts = attempts + 1
+        }
+    }
+
+    if(attempts == 3)
+    {
+        console.log("Actual answer "+x)
+        console.log("You lost.....!")
+    }
+        
+
+    
+    //console.log(x)
+
+</script>
+</html>
